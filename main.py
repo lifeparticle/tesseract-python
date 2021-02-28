@@ -1,10 +1,10 @@
 from PIL import Image
 import pytesseract
 
-def processImage(iamge_name, lang_code):
+def process_image(iamge_name, lang_code):
 	return pytesseract.image_to_string(Image.open(iamge_name), lang=lang_code)
 
-def printData(data):
+def print_data(data):
 	print(data)
 
 def output_file(filename, data):
@@ -13,10 +13,10 @@ def output_file(filename, data):
 	file.close()
 
 def main():
-	data_eng = processImage("test_eng.png", "eng")
-	data_ben = processImage("test_ben.png", "ben")
-	printData(data_eng)
-	printData(data_ben)
+	data_eng = process_image("test_eng.png", "eng")
+	data_ben = process_image("test_ben.png", "ben")
+	print_data(data_eng)
+	print_data(data_ben)
 	output_file("eng.txt", data_eng)
 	output_file("ben.txt", data_ben)
 
